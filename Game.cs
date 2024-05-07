@@ -19,6 +19,7 @@ namespace SalvaOceano
     {
         private string playerName;
 
+
         public Game(string name)
         {
             InitializeComponent();
@@ -78,6 +79,8 @@ namespace SalvaOceano
 
         private void bttnSaveHere_Click(object sender, EventArgs e)
         {
+            string path = "player.xml";
+            XMLHelpers.AddFalsePlay();
             if (lblFamily.Text == "Au Marina")
             {
                 // GAnou = (GA - x)/5,on x = 5
@@ -87,12 +90,12 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
                 }
             }
             else if (lblFamily.Text == "Tortuga marina")
@@ -104,12 +107,12 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
                 }
             }
             else if (lblFamily.Text == "Cetaci")
@@ -121,12 +124,12 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
                 }
             }
             else
@@ -137,19 +140,22 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
                 }
             }
+            XMLHelpers.AddFalsePlay();
             Close();
         }
 
         private void bttnSaveCram_Click(object sender, EventArgs e)
         {
+            string  path = "player.xml";
+            
             if (lblFamily.Text == "Au Marina")
             {
                 // GAnou = (GA - x)/5,on x = 0
@@ -159,13 +165,13 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
 
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
 
                 }
             }
@@ -178,13 +184,13 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
 
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
                 }
             }
             else if (lblFamily.Text == "Cetaci")
@@ -196,13 +202,13 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
 
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
 
                 }
             }
@@ -214,16 +220,17 @@ namespace SalvaOceano
                 if (GAnew <= 30)
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. L’exemplar està recuperat i pot tornar al seu hàbitat. La teva experiència ha augmentat en +50XP.\r\nFins el proper rescat!\r\n");
-                    XMLHelpers.AddXp(50);
+                    XMLHelpers.AddXp(50, path);
 
                 }
                 else
                 {
                     MessageBox.Show($"El tractament aplicat ha reduït el GA fins al {GAnew}%. No ha estat prou efectiu i cal traslladar l’exemplar al centre. La teva experiència s’ha reduït en -20XP.");
-                    XMLHelpers.AddXp(-20);
+                    XMLHelpers.AddXp(-20, path);
 
                 }
             }
+            XMLHelpers.AddFalsePlay();
             Close();
         }
     }
